@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel with Balloons and Confetti</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="script2.js" defer></script>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="happy-birthday-155461.mp3" type="audio/mpeg">
+    </audio>
+
+  <div class="balloon-container">
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+  </div>
+
+  <div class="confetti-container">
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="slide">
+                <img src="./hbd/Screenshot 2024-10-18 161358.png" alt="Picture 1">
+                <div class="poetry">
+                <p>"In your eyes, I find my peace, <br> As the world fades, love won't cease."</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./hbd/Screenshot 2024-10-18 161431.png" alt="Picture 2">
+                <div class="poetry">
+                <p>"Your smile, a light that never dims, <br> A spark igniting all my whims."</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./hbd/Screenshot 2024-10-18 161321.png" alt="Picture 3">
+                <div class="poetry">
+                <p>"With you, my heart has found its way, <br> In every moment, night or day."</p>
+                </div>
+            </div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</body>
+<script>
+    let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const carouselInner = document.querySelector('.carousel-inner');
+
+function showSlides() {
+  slideIndex++;
+  if (slideIndex >= totalSlides) {
+    slideIndex = 0;
+  }
+
+  carouselInner.style.transform = `translateX(${-slideIndex * 100}%)`;
+
+  setTimeout(showSlides, 3000);
+}
+
+showSlides();
+
+</script>
+
+</html>
