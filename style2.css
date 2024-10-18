@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+    overflow: hidden;
+  }
+  
+  /* Balloon Styles */
+  .balloon-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .balloon {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: red;
+    border-radius: 50%;
+    animation: balloon-float 10s ease-in-out infinite;
+    opacity: 0.8;
+  }
+  
+  .balloon:nth-child(1) {
+    left: 5%;
+    background-color: red;
+  }
+  
+  .balloon:nth-child(2) {
+    left: 15%;
+    background-color: blue;
+  }
+  
+  .balloon:nth-child(3) {
+    left: 80%;
+    background-color: yellow;
+  }
+  
+  .balloon:nth-child(4) {
+    left: 90%;
+    background-color: green;
+  }
+  
+  @keyframes balloon-float {
+    0% {
+      bottom: -100px;
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      bottom: 110%;
+      transform: translateX(-20px);
+    }
+  }
+  
+  /* Confetti Styles */
+  .confetti-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    background-color: pink;
+    animation: confetti-fall 5s linear infinite;
+  }
+  
+  .confetti:nth-child(1) {
+    left: 15%;
+    animation-duration: 3s;
+    background-color: yellow;
+  }
+  
+  .confetti:nth-child(2) {
+    left: 35%;
+    animation-duration: 4s;
+    background-color: red;
+  }
+  
+  .confetti:nth-child(3) {
+    left: 55%;
+    animation-duration: 5s;
+    background-color: blue;
+  }
+  
+  .confetti:nth-child(4) {
+    left: 75%;
+    animation-duration: 3.5s;
+    background-color: green;
+  }
+  
+  .confetti:nth-child(5) {
+    left: 90%;
+    animation-duration: 4.5s;
+    background-color: orange;
+  }
+  
+  .confetti:nth-child(6) {
+    left: 10%;
+    animation-duration: 5.5s;
+    background-color: purple;
+  }
+  
+  @keyframes confetti-fall {
+    0% {
+      top: -10px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 110%;
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Carousel Styles */
+  .carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .carousel-inner {
+    display: flex;
+    transition: transform 1s ease; /* Add this line for smooth transition */
+    width: 300%; /* Adjust this based on the number of slides (e.g., 3 slides = 300%) */
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 90vh;
+    display: block;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    box-sizing: border-box;
+  }
+  
+  .poetry {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    width: 90%;
+  }
+  
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  
